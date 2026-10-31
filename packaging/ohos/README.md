@@ -2,9 +2,14 @@
 
 Runs the official `artcraft-launcher-web` build — the same static site published as
 `artcraft-launcher-web-<version>.zip` on the GitHub release — inside a HarmonyOS app. An
-ArkTS shell wraps an ArkWeb `Web` component and serves the site from the
-HAP's own `rawfile`: no network origin, no server-side code, no Rust/wasm
-toolchain involved.
+ArkTS shell wraps an ArkWeb `Web` component and serves the site from
+the HAP's own `rawfile`: no network origin, no server-side code.
+
+This branch (`ohos-webshell`) is the integrated form: the ArkWeb shell
+packaging under `packaging/ohos/` plus the wasm-side CJK font change
+merged from the `cjk-web-face` branch (which remains the clean
+single-purpose form for an upstream PR). Build either variant from this
+one checkout.
 
 ## How the shell works
 
@@ -35,8 +40,8 @@ The committed tree is deliberately signing-free (`"signingConfigs": []` in
 at `packaging\ohos\local\signing.json` (gitignored) — one `signingConfigs`
 entry as DevEco Studio writes it. `build-hap.ps1` injects it for the build
 and restores the pristine file afterwards. Adjust `bundleName` in
-`AppScope/app.json5` (currently the `com.example.craft-launcher.web`
-placeholder) to match your signing material.
+`AppScope/app.json5` (currently the `com.example.craft-launcher.web` placeholder)
+to match your signing material.
 
 ## Verified status and known limitations
 
