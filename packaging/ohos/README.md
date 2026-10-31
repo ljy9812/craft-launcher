@@ -5,11 +5,7 @@ Runs the official `artcraft-launcher-web` build — the same static site publish
 ArkTS shell wraps an ArkWeb `Web` component and serves the site from
 the HAP's own `rawfile`: no network origin, no server-side code.
 
-This branch (`ohos-webshell`) is the integrated form: the ArkWeb shell
-packaging under `packaging/ohos/` plus the wasm-side CJK font change
-merged from the `cjk-web-face` branch (which remains the clean
-single-purpose form for an upstream PR). Build either variant from this
-one checkout.
+
 
 ## How the shell works
 
